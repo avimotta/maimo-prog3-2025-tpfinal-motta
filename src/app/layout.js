@@ -1,15 +1,16 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { ShopContextProvider } from '@/app/contexts/ShopContext'
 import "./globals.css";
+import Navbar from '@/components/Navbar'
+import Footer from "@/components/Footer"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+import { Syne } from "next/font/google";
+
+const syne = Syne({
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Create Next App",
@@ -18,11 +19,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" className={syne.className}>
+      <body className="flex flex-col min-h-screen"> 
+        <ShopContextProvider> 
+          <Navbar/>
+            <main className="flex-1">
+              {children}
+            </main>
+          <Footer/>
+        </ShopContextProvider>
       </body>
     </html>
   );
