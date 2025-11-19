@@ -36,7 +36,7 @@ export const ShopContextProvider = ({ children }) => {
 
   const getOneProduct = async (id) => {
     try {
-      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/${id}`);
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/products/${id}`);
       setProduct(res.data);
       return res.data.product;
     } catch (error) {
