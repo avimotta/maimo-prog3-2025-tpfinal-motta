@@ -22,9 +22,6 @@ const Card = ({ params }) => {
 
   if (!product) return null;
 
-  console.log('Datos de la card:', product); // o el nombre que uses
-console.log('Imagen:', product.coverImage);
-
   return (
     <div className="min-h-screen bg-[#fffeec] py-8 px-4 pt-30 sm:px-8">
       <div className="max-w-7xl mx-auto">
