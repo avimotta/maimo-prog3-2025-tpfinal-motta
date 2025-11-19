@@ -22,8 +22,8 @@ const Card = ({ params }) => {
 
   if (!product) return null;
 
-  console.log('Datos de la card:', album); // o el nombre que uses
-console.log('Imagen:', album.coverImage);
+  console.log('Datos de la card:', product); // o el nombre que uses
+console.log('Imagen:', product.coverImage);
 
   return (
     <div className="min-h-screen bg-[#fffeec] py-8 px-4 pt-30 sm:px-8">
