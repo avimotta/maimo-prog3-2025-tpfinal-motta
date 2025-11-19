@@ -2,11 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useShopContext } from "@/app/contexts/ShopContext";
 
 const Navbar = () => {
-  const { favsQty } = useShopContext();
-
   return (
     <div
       className="

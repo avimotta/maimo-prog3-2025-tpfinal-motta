@@ -21,7 +21,8 @@ export default function LanguageFilter() {
         <button 
           key={category._id}
           onClick={() => filterByLanguage(category._id)}
-          className={`px-4 py-2 rounded ${selectedLanguage === category._id ? "bg-[#FF5454] text-[#fffeec] border-2 border-[#090808] shadow-[4px_4px_0px_0px_rgba(9,8,8,1)]" : "bg-[#fffeec] border-2 border-[#090808] text-[#090808]"}`}
+          className={`px-4 py-2 rounded ${selectedLanguage === category._id ? 
+            "bg-[#FF5454] text-[#fffeec] border-2 border-[#090808] shadow-[4px_4px_0px_0px_rgba(9,8,8,1)]" : "bg-[#fffeec] border-2 border-[#090808] text-[#090808]"}`}
         >
           {category.name}
         </button>

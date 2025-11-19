@@ -17,7 +17,7 @@ export const ShopContextProvider = ({ children }) => {
 
   const getAllProducts = useCallback(async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/products`);
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/products`);
       setAllProducts(res.data);
       setProducts(res.data);
     } catch (error) {
@@ -27,7 +27,7 @@ export const ShopContextProvider = ({ children }) => {
 
   const getCategories = useCallback(async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/categories`);
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/categories`);
       setCategories(res.data);
     } catch (error) {
       console.log(error);
@@ -36,7 +36,7 @@ export const ShopContextProvider = ({ children }) => {
 
   const getOneProduct = async (id) => {
     try {
-      const res = await axios.get(`http://localhost:4000/products/${id}`);
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/${id}`);
       setProduct(res.data);
       return res.data.product;
     } catch (error) {
@@ -138,7 +138,7 @@ export const ShopContextProvider = ({ children }) => {
   };
 
   const addReview = async (productId, reviewData) => {
-  const url = `http://localhost:4000/products/${productId}/reviews`;
+  const url = `${process.env.NEXT_PUBLIC_API_URL}/products/${productId}/reviews`;
 
   try {
     const res = await axios.post(url, reviewData);
